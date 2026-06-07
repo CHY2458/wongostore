@@ -1,1 +1,743 @@
-# wongostore
+# wongostore[index.html](https://github.com/user-attachments/files/28679469/index.html)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>원고상점 — 브랜드의 색감을 글로 표현합니다</title>
+  <meta name="description" content="브랜드 블로그 글쓰기 전문. 검색되는 글과 브랜드 목소리, 둘 다 잡습니다. 의료·법률·인테리어·라이프스타일·교육 업종 전문.">
+  <meta name="naver-site-verification" content="1ff2e0145ca0c58985bc3f0c627d0ba6965c8861" />
+  <meta name="keywords" content="브랜드 블로그, 블로그 원고, 블로그 글쓰기, 콘텐츠 마케팅, 원고상점">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #2d5a3d;
+      --green-dark: #1e3f2a;
+      --green-light: rgba(45, 90, 61, 0.08);
+      --text: #1a1a1a;
+      --text-sub: #555;
+      --text-muted: #888;
+      --bg: #fff;
+      --bg-tint: #f7f5f0;
+      --border: #e8e4de;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: fixed;
+      top: 0;
+      inset-inline: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-size: 14px;
+      color: var(--text-sub);
+      transition: color 0.2s;
+    }
+
+    .nav-menu a:hover { color: var(--green); }
+
+    /* ── Hero ── */
+    #hero {
+      padding: 156px 0 120px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      background: var(--green-light);
+      padding: 7px 18px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+
+    .hero-headline {
+      font-size: 54px;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 52px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 16px 38px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--green-dark); }
+
+    /* ── About ── */
+    #about {
+      padding: 120px 0;
+      background: var(--bg-tint);
+    }
+
+    .about-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .about-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 40px;
+      line-height: 1.4;
+    }
+
+    .about-body p {
+      font-size: 16px;
+      color: var(--text-sub);
+      line-height: 1.95;
+      margin-bottom: 22px;
+    }
+
+    .about-body p:last-child {
+      margin-bottom: 0;
+      font-weight: 500;
+      color: var(--green);
+    }
+
+    /* ── Services ── */
+    #services {
+      padding: 120px 0;
+    }
+
+    .section-head {
+      margin-bottom: 56px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-top: 8px;
+    }
+
+    .service-card {
+      background: var(--bg-tint);
+      border-radius: 14px;
+      padding: 52px 56px;
+      display: flex;
+      gap: 44px;
+      align-items: flex-start;
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--green);
+      border-radius: 12px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-body h3 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .service-body > p {
+      font-size: 15px;
+      color: var(--text-sub);
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .service-tag {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--green);
+      background: var(--green-light);
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+
+    /* ── Portfolio ── */
+    #portfolio {
+      padding: 120px 0;
+      background: var(--bg-tint);
+    }
+
+    .portfolio-notice {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .portfolio-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .portfolio-item {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 30px 36px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .portfolio-item:hover {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .portfolio-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .portfolio-num {
+      font-size: 12px;
+      color: #ccc;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      padding-top: 3px;
+      width: 28px;
+    }
+
+    .portfolio-text {
+      flex: 1;
+    }
+
+    .portfolio-cat {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 7px;
+    }
+
+    .portfolio-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .portfolio-desc {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.75;
+    }
+
+    .portfolio-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--green);
+      border: 1px solid rgba(45, 90, 61, 0.28);
+      padding: 7px 16px;
+      border-radius: 4px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .portfolio-link:hover {
+      background: var(--green-light);
+      border-color: var(--green);
+    }
+
+    /* ── Contact ── */
+    #contact {
+      padding: 120px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .contact-who h3 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .contact-reasons {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-reasons li {
+      display: flex;
+      gap: 14px;
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    .contact-reasons li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      margin-top: 9px;
+    }
+
+    .contact-collab {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .contact-channels h3 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .channel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .channel-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 22px;
+      border-radius: 10px;
+      background: var(--bg-tint);
+      transition: background 0.15s;
+    }
+
+    .channel-item:hover { background: #ede9e2; }
+
+    .channel-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ch-mail  { background: #ddeae0; }
+    .ch-kakao { background: #FEE500; }
+    .ch-kmong { background: #ddeae0; }
+
+    .channel-meta p:first-child {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .channel-meta p:last-child {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #181818;
+      color: rgba(255, 255, 255, 0.35);
+      padding: 52px 0;
+      text-align: center;
+    }
+
+    footer .footer-logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    footer p { font-size: 13px; line-height: 1.8; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+
+      .container { padding: 0 24px; }
+
+      .hero-headline { font-size: 36px; }
+      .hero-sub { font-size: 16px; }
+
+      #hero         { padding: 116px 0 80px; }
+      #about        { padding: 80px 0; }
+      #services     { padding: 80px 0; }
+      #portfolio    { padding: 80px 0; }
+      #contact      { padding: 80px 0; }
+
+      .about-wrap { padding: 0 24px; }
+
+      .section-title { font-size: 26px; }
+
+      .service-card {
+        flex-direction: column;
+        gap: 24px;
+        padding: 32px 28px;
+      }
+
+      .portfolio-item { padding: 24px 22px; }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-headline { font-size: 28px; }
+      .hero-sub { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav aria-label="주요 메뉴">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">원고상점</a>
+      <ul class="nav-menu" role="list">
+        <li><a href="#about">만든 이유</a></li>
+        <li><a href="#services">서비스</a></li>
+        <li><a href="#portfolio">포트폴리오</a></li>
+        <li><a href="#contact">문의</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- 1. Hero -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <span class="hero-badge">브랜드 블로그 글쓰기</span>
+        <h1 id="hero-heading" class="hero-headline">
+          브랜드의 색감을<br>글로 표현합니다.
+        </h1>
+        <p class="hero-sub">대표님의 진심이 글에서 사라지지 않도록.</p>
+        <a href="#contact" class="btn btn-primary">문의하기</a>
+      </div>
+    </section>
+
+    <!-- 2. About -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="about-wrap">
+        <span class="label">About</span>
+        <h2 id="about-heading" class="about-title">원고상점을 만든 이유</h2>
+        <div class="about-body">
+          <p>중고차 매매단지에서 차 사진을 찍는 일을 했습니다.<br>딜러마다 파는 차는 달랐지만, 제가 찍는 구도는 늘 같았어요. 그래도 손님이 잘 볼 수 있게, 이 차의 가장 좋은 면이 보이게. 그게 제 일이었습니다.</p>
+          <p>글도 다르지 않다고 생각했어요.</p>
+          <p>프리랜서로 브랜드 글을 쓰면서 클라이언트들과 이야기를 나눴습니다. 이야기를 듣다 보면 느껴지는 게 있었어요. 이 사람들은 자기 브랜드를 진심으로 만들었구나. 작은 클리닉이든, 작은 법률사무소든. 그 진심이 글에서 사라지면 안 된다고 생각했어요. 그 진심을 내가 가장 자신 있는 것, 글로 표현해주고 싶었습니다.</p>
+          <p>PR 회사, 바이럴마케팅 회사에서도 글만 썼습니다. 그런데 내가 쓴 글이 얼마나 읽혔는지, 누구에게 닿았는지 알 수가 없었어요. 그 성과를 직접 느끼고 싶었습니다. 내 글이 누군가의 브랜드에 실제로 도움이 됐다는 걸.</p>
+          <p>그래서 원고상점을 만들었습니다.<br>원고상점, 상점처럼 브랜드를 만든 대표님들이 자신의 색감에 맞는 글을 찾으실 수 있도록 도와드리겠습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Services -->
+    <section id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="label">Services</span>
+          <h2 id="services-heading" class="section-title">서비스 안내</h2>
+        </header>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <div class="service-body">
+            <h3>브랜드 블로그 글쓰기</h3>
+            <p>검색되는 글과 브랜드 목소리, 둘 다 잡습니다.</p>
+            <p>의료·법률·인테리어·라이프스타일·교육 업종 전문.</p>
+            <div class="service-tags" aria-label="전문 업종">
+              <span class="service-tag">의료</span>
+              <span class="service-tag">법률</span>
+              <span class="service-tag">인테리어</span>
+              <span class="service-tag">라이프스타일</span>
+              <span class="service-tag">교육</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Portfolio -->
+    <section id="portfolio" aria-labelledby="portfolio-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="label">Portfolio</span>
+          <h2 id="portfolio-heading" class="section-title">포트폴리오</h2>
+        </header>
+        <p class="portfolio-notice">※ 모든 클라이언트는 가상으로 설정된 포트폴리오 예시 작업입니다.</p>
+        <div class="portfolio-list">
+
+          <article class="portfolio-item">
+            <div class="portfolio-row">
+              <span class="portfolio-num" aria-hidden="true">01</span>
+              <div class="portfolio-text">
+                <p class="portfolio-cat">법률</p>
+                <h3 class="portfolio-title">법무법인 노동과봄 (가상)</h3>
+                <p class="portfolio-desc">산재 신청 방법을 몰라 참고 있는 근로자에게 말 걸듯 썼습니다. 법률 정보를 딱딱하지 않게, 브랜드 목소리로 풀어낸 글.</p>
+                <a href="https://blog.naver.com/momomo2458/224307785342" target="_blank" rel="noopener noreferrer" class="portfolio-link">글 보기 →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-item">
+            <div class="portfolio-row">
+              <span class="portfolio-num" aria-hidden="true">02</span>
+              <div class="portfolio-text">
+                <p class="portfolio-cat">의료 · 한의원</p>
+                <h3 class="portfolio-title">가상 한의원</h3>
+                <p class="portfolio-desc">'분명히 했는데 왜 안 빠질까'라는 독자의 공감에서 시작한 다이어트 원고. 원장의 임상 전문성을 자연스럽게 녹였습니다.</p>
+                <a href="https://blog.naver.com/momomo2458/224295981771" target="_blank" rel="noopener noreferrer" class="portfolio-link">글 보기 →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-item">
+            <div class="portfolio-row">
+              <span class="portfolio-num" aria-hidden="true">03</span>
+              <div class="portfolio-text">
+                <p class="portfolio-cat">의료 · 이비인후과</p>
+                <h3 class="portfolio-title">이비인후과 (가상)</h3>
+                <p class="portfolio-desc">만성비염을 방치하면 안 되는 이유를 독자 눈높이에 맞게 풀었습니다. 정보 전달과 병원 신뢰감을 함께 잡은 글.</p>
+                <a href="https://blog.naver.com/momomo2458/224219424147" target="_blank" rel="noopener noreferrer" class="portfolio-link">글 보기 →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-item">
+            <div class="portfolio-row">
+              <span class="portfolio-num" aria-hidden="true">04</span>
+              <div class="portfolio-text">
+                <p class="portfolio-cat">인테리어</p>
+                <h3 class="portfolio-title">리빙스튜디오하우스 (가상)</h3>
+                <p class="portfolio-desc">마포구 32평 구축 아파트 시공 전후 사례를 스토리로 풀었습니다. 고객 후기를 브랜드 목소리로 재구성한 글.</p>
+                <a href="https://blog.naver.com/momomo2458/224296963663" target="_blank" rel="noopener noreferrer" class="portfolio-link">글 보기 →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-item">
+            <div class="portfolio-row">
+              <span class="portfolio-num" aria-hidden="true">05</span>
+              <div class="portfolio-text">
+                <p class="portfolio-cat">세무회계</p>
+                <h3 class="portfolio-title">세무회계 블로그 (가상)</h3>
+                <p class="portfolio-desc">'세금폭탄'이라는 공감 키워드로 시작한 종합소득세 절세 원고. 어려운 세금 정보를 실생활 언어로 풀었습니다.</p>
+                <a href="https://blog.naver.com/momomo2458/224210154871" target="_blank" rel="noopener noreferrer" class="portfolio-link">글 보기 →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contact -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="label">Contact</span>
+          <h2 id="contact-heading" class="section-title">문의</h2>
+        </header>
+        <div class="contact-grid">
+
+          <div class="contact-who">
+            <h3>이런 분께 연락주세요.</h3>
+            <ul class="contact-reasons" role="list">
+              <li>브랜드 블로그 원고를 의뢰했지만, AI 티가 나서 실망한 대표님</li>
+              <li>직접 블로그 원고를 써봤지만, 생각보다 어렵다 느껴지신 분</li>
+              <li>무엇을 써야 할지 모르겠는 대표님도 환영합니다. 간단한 기획 정리부터 함께 시작합니다.</li>
+            </ul>
+            <p class="contact-collab">협업 및 스카웃 문의도 환영합니다.</p>
+          </div>
+
+          <div class="contact-channels">
+            <h3>연락 방법</h3>
+            <div class="channel-list">
+
+              <a href="mailto:momomo2458@naver.com" class="channel-item">
+                <div class="channel-icon ch-mail" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d5a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M2 7l10 7 10-7"/>
+                  </svg>
+                </div>
+                <div class="channel-meta">
+                  <p>Email</p>
+                  <p>momomo2458@naver.com</p>
+                </div>
+              </a>
+
+              <a href="https://pf.kakao.com/_xbYWTX" target="_blank" rel="noopener noreferrer" class="channel-item">
+                <div class="channel-icon ch-kakao" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#3C1E1E">
+                    <path d="M12 3C6.477 3 2 6.582 2 11c0 2.857 1.737 5.376 4.37 6.89-.192.672-.696 2.434-.797 2.814-.124.474.173.468.365.34.149-.1 2.37-1.607 3.33-2.257.566.08 1.145.123 1.732.123 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/>
+                  </svg>
+                </div>
+                <div class="channel-meta">
+                  <p>KakaoTalk</p>
+                  <p>카카오톡 채널 문의</p>
+                </div>
+              </a>
+
+              <a href="https://kmong.com/gig/757380" target="_blank" rel="noopener noreferrer" class="channel-item">
+                <div class="channel-icon ch-kmong" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d5a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9 12l2 2 4-4"/>
+                  </svg>
+                </div>
+                <div class="channel-meta">
+                  <p>크몽</p>
+                  <p>크몽 서비스 바로가기</p>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-logo">원고상점</p>
+      <p>브랜드의 색감을 글로 표현합니다.</p>
+      <p style="margin-top: 12px; font-size: 12px; opacity: 0.6;">© 2026 원고상점. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
