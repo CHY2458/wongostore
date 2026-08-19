@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.chj.midosaju",
+    "sha256_cert_fingerprints": ["63:9E:8D:D9:BE:78:13:10:2E:78:6D:B5:5A:CF:60:8B:E6:18:CE:F3:55:54:4C:DC:E3:48:EE:39:FA:53:4F:3C"]
+  }
+}]
